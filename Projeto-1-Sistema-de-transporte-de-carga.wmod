@@ -1,0 +1,992 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<Module xmlns="http://waters.sourceforge.net/xsd/module" xmlns:B="http://waters.sourceforge.net/xsd/base" Name="Projeto-1-Sistema-de-transporte-de-carga">
+<EventDeclList>
+<EventDecl Kind="CONTROLLABLE" Name="P_12"/>
+<EventDecl Kind="UNCONTROLLABLE" Name="P_23"/>
+<EventDecl Kind="CONTROLLABLE" Name="P_34"/>
+<EventDecl Kind="CONTROLLABLE" Name="P_45"/>
+<EventDecl Kind="CONTROLLABLE" Name="P_56"/>
+<EventDecl Kind="CONTROLLABLE" Name="P_67"/>
+<EventDecl Kind="CONTROLLABLE" Name="P_78"/>
+<EventDecl Kind="CONTROLLABLE" Name="P_81"/>
+<EventDecl Kind="CONTROLLABLE" Name="g_12"/>
+<EventDecl Kind="UNCONTROLLABLE" Name="g_23"/>
+<EventDecl Kind="CONTROLLABLE" Name="g_34"/>
+<EventDecl Kind="CONTROLLABLE" Name="g_45"/>
+<EventDecl Kind="CONTROLLABLE" Name="g_56"/>
+<EventDecl Kind="CONTROLLABLE" Name="g_67"/>
+<EventDecl Kind="CONTROLLABLE" Name="g_78"/>
+<EventDecl Kind="CONTROLLABLE" Name="g_81"/>
+<EventDecl Kind="CONTROLLABLE" Name="H_12"/>
+<EventDecl Kind="UNCONTROLLABLE" Name="H_23"/>
+<EventDecl Kind="CONTROLLABLE" Name="H_34"/>
+<EventDecl Kind="CONTROLLABLE" Name="H_45"/>
+<EventDecl Kind="CONTROLLABLE" Name="H_56"/>
+<EventDecl Kind="CONTROLLABLE" Name="H_67"/>
+<EventDecl Kind="CONTROLLABLE" Name="H_78"/>
+<EventDecl Kind="CONTROLLABLE" Name="H_81"/>
+<EventDecl Kind="PROPOSITION" Name=":accepting"/>
+</EventDeclList>
+<ComponentList>
+<SimpleComponent Kind="PLANT" Name="Prisma">
+<Graph Deterministic="false">
+<NodeList>
+<SimpleNode Initial="true" Name="S1">
+<PointGeometry>
+<Point X="-256" Y="112"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="S2">
+<PointGeometry>
+<Point X="304" Y="112"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="S3">
+<PointGeometry>
+<Point X="512" Y="112"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="S4">
+<PointGeometry>
+<Point X="752" Y="112"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="S8">
+<PointGeometry>
+<Point X="-256" Y="304"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="S7">
+<PointGeometry>
+<Point X="304" Y="304"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="S6">
+<PointGeometry>
+<Point X="528" Y="304"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="1" Y="9"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="S5">
+<PointGeometry>
+<Point X="752" Y="304"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</SimpleNode>
+</NodeList>
+<EdgeList>
+<Edge Source="S1" Target="S2">
+<LabelBlock>
+<SimpleIdentifier Name="P_12"/>
+</LabelBlock>
+<GuardActionBlock>
+<Guards>
+<BinaryExpression Operator="&amp;" Text="p_Hb20 !=2 &amp; p_gol !=2 &amp; p_Hb20 !=3 &amp; p_gol !=3">
+<BinaryExpression Operator="&amp;">
+<BinaryExpression Operator="&amp;">
+<BinaryExpression Operator="!=">
+<SimpleIdentifier Name="p_Hb20"/>
+<IntConstant Value="2"/>
+</BinaryExpression>
+<BinaryExpression Operator="!=">
+<SimpleIdentifier Name="p_gol"/>
+<IntConstant Value="2"/>
+</BinaryExpression>
+</BinaryExpression>
+<BinaryExpression Operator="!=">
+<SimpleIdentifier Name="p_Hb20"/>
+<IntConstant Value="3"/>
+</BinaryExpression>
+</BinaryExpression>
+<BinaryExpression Operator="!=">
+<SimpleIdentifier Name="p_gol"/>
+<IntConstant Value="3"/>
+</BinaryExpression>
+</BinaryExpression>
+</Guards>
+<Actions>
+<BinaryExpression Operator="=">
+<SimpleIdentifier Name="p_prisma"/>
+<IntConstant Value="2"/>
+</BinaryExpression>
+</Actions>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="20"/>
+</LabelGeometry>
+</GuardActionBlock>
+</Edge>
+<Edge Source="S2" Target="S3">
+<LabelBlock>
+<SimpleIdentifier Name="P_23"/>
+</LabelBlock>
+<GuardActionBlock>
+<Guards>
+<BinaryExpression Operator="&amp;" Text="p_Hb20 !=3 &amp; p_gol !=3">
+<BinaryExpression Operator="!=">
+<SimpleIdentifier Name="p_Hb20"/>
+<IntConstant Value="3"/>
+</BinaryExpression>
+<BinaryExpression Operator="!=">
+<SimpleIdentifier Name="p_gol"/>
+<IntConstant Value="3"/>
+</BinaryExpression>
+</BinaryExpression>
+</Guards>
+<Actions>
+<BinaryExpression Operator="=">
+<SimpleIdentifier Name="p_prisma"/>
+<IntConstant Value="3"/>
+</BinaryExpression>
+</Actions>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="20"/>
+</LabelGeometry>
+</GuardActionBlock>
+</Edge>
+<Edge Source="S3" Target="S4">
+<LabelBlock>
+<SimpleIdentifier Name="P_34"/>
+</LabelBlock>
+<GuardActionBlock>
+<Guards>
+<BinaryExpression Operator="&amp;" Text="p_Hb20 !=4 &amp; p_gol !=4">
+<BinaryExpression Operator="!=">
+<SimpleIdentifier Name="p_Hb20"/>
+<IntConstant Value="4"/>
+</BinaryExpression>
+<BinaryExpression Operator="!=">
+<SimpleIdentifier Name="p_gol"/>
+<IntConstant Value="4"/>
+</BinaryExpression>
+</BinaryExpression>
+</Guards>
+<Actions>
+<BinaryExpression Operator="=">
+<SimpleIdentifier Name="p_prisma"/>
+<IntConstant Value="4"/>
+</BinaryExpression>
+</Actions>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="20"/>
+</LabelGeometry>
+</GuardActionBlock>
+</Edge>
+<Edge Source="S4" Target="S5">
+<LabelBlock>
+<SimpleIdentifier Name="P_45"/>
+</LabelBlock>
+<GuardActionBlock>
+<Guards>
+<BinaryExpression Operator="&amp;" Text="p_Hb20 !=5 &amp; p_gol !=5">
+<BinaryExpression Operator="!=">
+<SimpleIdentifier Name="p_Hb20"/>
+<IntConstant Value="5"/>
+</BinaryExpression>
+<BinaryExpression Operator="!=">
+<SimpleIdentifier Name="p_gol"/>
+<IntConstant Value="5"/>
+</BinaryExpression>
+</BinaryExpression>
+</Guards>
+<Actions>
+<BinaryExpression Operator="=">
+<SimpleIdentifier Name="p_prisma"/>
+<IntConstant Value="5"/>
+</BinaryExpression>
+</Actions>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="20"/>
+</LabelGeometry>
+</GuardActionBlock>
+</Edge>
+<Edge Source="S5" Target="S6">
+<LabelBlock>
+<SimpleIdentifier Name="P_56"/>
+</LabelBlock>
+<GuardActionBlock>
+<Guards>
+<BinaryExpression Operator="&amp;" Text="p_Hb20 !=6 &amp; p_gol !=6">
+<BinaryExpression Operator="!=">
+<SimpleIdentifier Name="p_Hb20"/>
+<IntConstant Value="6"/>
+</BinaryExpression>
+<BinaryExpression Operator="!=">
+<SimpleIdentifier Name="p_gol"/>
+<IntConstant Value="6"/>
+</BinaryExpression>
+</BinaryExpression>
+</Guards>
+<Actions>
+<BinaryExpression Operator="=">
+<SimpleIdentifier Name="p_prisma"/>
+<IntConstant Value="6"/>
+</BinaryExpression>
+</Actions>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="20"/>
+</LabelGeometry>
+</GuardActionBlock>
+</Edge>
+<Edge Source="S6" Target="S7">
+<LabelBlock>
+<SimpleIdentifier Name="P_67"/>
+</LabelBlock>
+<GuardActionBlock>
+<Guards>
+<BinaryExpression Operator="&amp;" Text="p_Hb20 !=7 &amp; p_gol !=7">
+<BinaryExpression Operator="!=">
+<SimpleIdentifier Name="p_Hb20"/>
+<IntConstant Value="7"/>
+</BinaryExpression>
+<BinaryExpression Operator="!=">
+<SimpleIdentifier Name="p_gol"/>
+<IntConstant Value="7"/>
+</BinaryExpression>
+</BinaryExpression>
+</Guards>
+<Actions>
+<BinaryExpression Operator="=">
+<SimpleIdentifier Name="p_prisma"/>
+<IntConstant Value="7"/>
+</BinaryExpression>
+</Actions>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="20"/>
+</LabelGeometry>
+</GuardActionBlock>
+</Edge>
+<Edge Source="S7" Target="S8">
+<LabelBlock>
+<SimpleIdentifier Name="P_78"/>
+</LabelBlock>
+<GuardActionBlock>
+<Guards>
+<BinaryExpression Operator="&amp;" Text="p_Hb20 !=8 &amp; p_gol !=8">
+<BinaryExpression Operator="!=">
+<SimpleIdentifier Name="p_Hb20"/>
+<IntConstant Value="8"/>
+</BinaryExpression>
+<BinaryExpression Operator="!=">
+<SimpleIdentifier Name="p_gol"/>
+<IntConstant Value="8"/>
+</BinaryExpression>
+</BinaryExpression>
+</Guards>
+<Actions>
+<BinaryExpression Operator="=">
+<SimpleIdentifier Name="p_prisma"/>
+<IntConstant Value="8"/>
+</BinaryExpression>
+</Actions>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="20"/>
+</LabelGeometry>
+</GuardActionBlock>
+</Edge>
+<Edge Source="S8" Target="S1">
+<LabelBlock>
+<SimpleIdentifier Name="P_81"/>
+</LabelBlock>
+<GuardActionBlock>
+<Guards>
+<BinaryExpression Operator="&amp;" Text="p_Hb20 !=1 &amp; p_gol !=1">
+<BinaryExpression Operator="!=">
+<SimpleIdentifier Name="p_Hb20"/>
+<IntConstant Value="1"/>
+</BinaryExpression>
+<BinaryExpression Operator="!=">
+<SimpleIdentifier Name="p_gol"/>
+<IntConstant Value="1"/>
+</BinaryExpression>
+</BinaryExpression>
+</Guards>
+<Actions>
+<BinaryExpression Operator="=">
+<SimpleIdentifier Name="p_prisma"/>
+<IntConstant Value="1"/>
+</BinaryExpression>
+</Actions>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="20"/>
+</LabelGeometry>
+</GuardActionBlock>
+</Edge>
+</EdgeList>
+</Graph>
+</SimpleComponent>
+<VariableComponent Name="p_prisma">
+<VariableRange><BinaryExpression Operator="..">
+<IntConstant Value="0"/>
+<IntConstant Value="8"/>
+</BinaryExpression>
+</VariableRange>
+<VariableInitial><BinaryExpression Operator="==">
+<SimpleIdentifier Name="p_prisma"/>
+<IntConstant Value="1"/>
+</BinaryExpression>
+</VariableInitial>
+</VariableComponent>
+<VariableComponent Name="p_gol">
+<VariableRange><BinaryExpression Operator="..">
+<IntConstant Value="0"/>
+<IntConstant Value="8"/>
+</BinaryExpression>
+</VariableRange>
+<VariableInitial><BinaryExpression Operator="==">
+<SimpleIdentifier Name="p_gol"/>
+<IntConstant Value="4"/>
+</BinaryExpression>
+</VariableInitial>
+</VariableComponent>
+<VariableComponent Name="p_Hb20">
+<VariableRange><BinaryExpression Operator="..">
+<IntConstant Value="0"/>
+<IntConstant Value="8"/>
+</BinaryExpression>
+</VariableRange>
+<VariableInitial><BinaryExpression Operator="==">
+<SimpleIdentifier Name="p_Hb20"/>
+<IntConstant Value="7"/>
+</BinaryExpression>
+</VariableInitial>
+</VariableComponent>
+<SimpleComponent Kind="PLANT" Name="Gol">
+<Graph Deterministic="false">
+<NodeList>
+<SimpleNode Name="S1">
+<PointGeometry>
+<Point X="96" Y="112"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="S2">
+<PointGeometry>
+<Point X="496" Y="112"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="S3">
+<PointGeometry>
+<Point X="768" Y="112"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Initial="true" Name="S4">
+<PointGeometry>
+<Point X="1072" Y="112"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="S8">
+<PointGeometry>
+<Point X="96" Y="240"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="S7">
+<PointGeometry>
+<Point X="512" Y="240"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="S6">
+<PointGeometry>
+<Point X="784" Y="240"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="S5">
+<PointGeometry>
+<Point X="1072" Y="240"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</SimpleNode>
+</NodeList>
+<EdgeList>
+<Edge Source="S1" Target="S2">
+<LabelBlock>
+<SimpleIdentifier Name="g_12"/>
+</LabelBlock>
+<GuardActionBlock>
+<Guards>
+<BinaryExpression Operator="&amp;" Text="p_Hb20 !=2 &amp; p_prisma !=2 &amp; p_Hb20 !=3 &amp; p_prisma !=3">
+<BinaryExpression Operator="&amp;">
+<BinaryExpression Operator="&amp;">
+<BinaryExpression Operator="!=">
+<SimpleIdentifier Name="p_Hb20"/>
+<IntConstant Value="2"/>
+</BinaryExpression>
+<BinaryExpression Operator="!=">
+<SimpleIdentifier Name="p_prisma"/>
+<IntConstant Value="2"/>
+</BinaryExpression>
+</BinaryExpression>
+<BinaryExpression Operator="!=">
+<SimpleIdentifier Name="p_Hb20"/>
+<IntConstant Value="3"/>
+</BinaryExpression>
+</BinaryExpression>
+<BinaryExpression Operator="!=">
+<SimpleIdentifier Name="p_prisma"/>
+<IntConstant Value="3"/>
+</BinaryExpression>
+</BinaryExpression>
+</Guards>
+<Actions>
+<BinaryExpression Operator="=" Text="p_gol =2">
+<SimpleIdentifier Name="p_gol"/>
+<IntConstant Value="2"/>
+</BinaryExpression>
+</Actions>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="20"/>
+</LabelGeometry>
+</GuardActionBlock>
+</Edge>
+<Edge Source="S2" Target="S3">
+<LabelBlock>
+<SimpleIdentifier Name="g_23"/>
+</LabelBlock>
+<GuardActionBlock>
+<Guards>
+<BinaryExpression Operator="&amp;" Text="p_Hb20 !=3 &amp; p_prisma !=3">
+<BinaryExpression Operator="!=">
+<SimpleIdentifier Name="p_Hb20"/>
+<IntConstant Value="3"/>
+</BinaryExpression>
+<BinaryExpression Operator="!=">
+<SimpleIdentifier Name="p_prisma"/>
+<IntConstant Value="3"/>
+</BinaryExpression>
+</BinaryExpression>
+</Guards>
+<Actions>
+<BinaryExpression Operator="=" Text="p_gol =3">
+<SimpleIdentifier Name="p_gol"/>
+<IntConstant Value="3"/>
+</BinaryExpression>
+</Actions>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="20"/>
+</LabelGeometry>
+</GuardActionBlock>
+</Edge>
+<Edge Source="S3" Target="S4">
+<LabelBlock>
+<SimpleIdentifier Name="g_34"/>
+</LabelBlock>
+<GuardActionBlock>
+<Guards>
+<BinaryExpression Operator="&amp;" Text="p_Hb20 !=4 &amp; p_prisma !=4">
+<BinaryExpression Operator="!=">
+<SimpleIdentifier Name="p_Hb20"/>
+<IntConstant Value="4"/>
+</BinaryExpression>
+<BinaryExpression Operator="!=">
+<SimpleIdentifier Name="p_prisma"/>
+<IntConstant Value="4"/>
+</BinaryExpression>
+</BinaryExpression>
+</Guards>
+<Actions>
+<BinaryExpression Operator="=" Text="p_gol =4">
+<SimpleIdentifier Name="p_gol"/>
+<IntConstant Value="4"/>
+</BinaryExpression>
+</Actions>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="20"/>
+</LabelGeometry>
+</GuardActionBlock>
+</Edge>
+<Edge Source="S4" Target="S5">
+<LabelBlock>
+<SimpleIdentifier Name="g_45"/>
+</LabelBlock>
+<GuardActionBlock>
+<Guards>
+<BinaryExpression Operator="&amp;" Text="p_Hb20 !=5 &amp; p_prisma !=5">
+<BinaryExpression Operator="!=">
+<SimpleIdentifier Name="p_Hb20"/>
+<IntConstant Value="5"/>
+</BinaryExpression>
+<BinaryExpression Operator="!=">
+<SimpleIdentifier Name="p_prisma"/>
+<IntConstant Value="5"/>
+</BinaryExpression>
+</BinaryExpression>
+</Guards>
+<Actions>
+<BinaryExpression Operator="=" Text="p_gol =5">
+<SimpleIdentifier Name="p_gol"/>
+<IntConstant Value="5"/>
+</BinaryExpression>
+</Actions>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="20"/>
+</LabelGeometry>
+</GuardActionBlock>
+</Edge>
+<Edge Source="S5" Target="S6">
+<LabelBlock>
+<SimpleIdentifier Name="g_56"/>
+</LabelBlock>
+<GuardActionBlock>
+<Guards>
+<BinaryExpression Operator="&amp;" Text="p_Hb20 !=6&amp; p_prisma !=6">
+<BinaryExpression Operator="!=">
+<SimpleIdentifier Name="p_Hb20"/>
+<IntConstant Value="6"/>
+</BinaryExpression>
+<BinaryExpression Operator="!=">
+<SimpleIdentifier Name="p_prisma"/>
+<IntConstant Value="6"/>
+</BinaryExpression>
+</BinaryExpression>
+</Guards>
+<Actions>
+<BinaryExpression Operator="=" Text="p_gol =6">
+<SimpleIdentifier Name="p_gol"/>
+<IntConstant Value="6"/>
+</BinaryExpression>
+</Actions>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="20"/>
+</LabelGeometry>
+</GuardActionBlock>
+</Edge>
+<Edge Source="S6" Target="S7">
+<LabelBlock>
+<SimpleIdentifier Name="g_67"/>
+</LabelBlock>
+<GuardActionBlock>
+<Guards>
+<BinaryExpression Operator="&amp;" Text="p_Hb20 !=7 &amp; p_prisma !=7">
+<BinaryExpression Operator="!=">
+<SimpleIdentifier Name="p_Hb20"/>
+<IntConstant Value="7"/>
+</BinaryExpression>
+<BinaryExpression Operator="!=">
+<SimpleIdentifier Name="p_prisma"/>
+<IntConstant Value="7"/>
+</BinaryExpression>
+</BinaryExpression>
+</Guards>
+<Actions>
+<BinaryExpression Operator="=" Text="p_gol =7">
+<SimpleIdentifier Name="p_gol"/>
+<IntConstant Value="7"/>
+</BinaryExpression>
+</Actions>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="20"/>
+</LabelGeometry>
+</GuardActionBlock>
+</Edge>
+<Edge Source="S7" Target="S8">
+<LabelBlock>
+<SimpleIdentifier Name="g_78"/>
+</LabelBlock>
+<GuardActionBlock>
+<Guards>
+<BinaryExpression Operator="&amp;" Text="p_Hb20 !=8 &amp; p_prisma !=8">
+<BinaryExpression Operator="!=">
+<SimpleIdentifier Name="p_Hb20"/>
+<IntConstant Value="8"/>
+</BinaryExpression>
+<BinaryExpression Operator="!=">
+<SimpleIdentifier Name="p_prisma"/>
+<IntConstant Value="8"/>
+</BinaryExpression>
+</BinaryExpression>
+</Guards>
+<Actions>
+<BinaryExpression Operator="=" Text="p_gol =8">
+<SimpleIdentifier Name="p_gol"/>
+<IntConstant Value="8"/>
+</BinaryExpression>
+</Actions>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="20"/>
+</LabelGeometry>
+</GuardActionBlock>
+</Edge>
+<Edge Source="S8" Target="S1">
+<LabelBlock>
+<SimpleIdentifier Name="g_81"/>
+</LabelBlock>
+<GuardActionBlock>
+<Guards>
+<BinaryExpression Operator="&amp;" Text="p_Hb20 !=1 &amp; p_prisma !=1">
+<BinaryExpression Operator="!=">
+<SimpleIdentifier Name="p_Hb20"/>
+<IntConstant Value="1"/>
+</BinaryExpression>
+<BinaryExpression Operator="!=">
+<SimpleIdentifier Name="p_prisma"/>
+<IntConstant Value="1"/>
+</BinaryExpression>
+</BinaryExpression>
+</Guards>
+<Actions>
+<BinaryExpression Operator="=" Text="p_gol =1">
+<SimpleIdentifier Name="p_gol"/>
+<IntConstant Value="1"/>
+</BinaryExpression>
+</Actions>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="20"/>
+</LabelGeometry>
+</GuardActionBlock>
+</Edge>
+</EdgeList>
+</Graph>
+</SimpleComponent>
+<SimpleComponent Kind="PLANT" Name="Hb20">
+<Graph Deterministic="false">
+<NodeList>
+<SimpleNode Name="S1">
+<PointGeometry>
+<Point X="96" Y="112"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="S2">
+<PointGeometry>
+<Point X="608" Y="112"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="S3">
+<PointGeometry>
+<Point X="832" Y="112"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="S4">
+<PointGeometry>
+<Point X="1088" Y="112"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="S5">
+<PointGeometry>
+<Point X="1088" Y="288"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="S6">
+<PointGeometry>
+<Point X="832" Y="288"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Initial="true" Name="S7">
+<PointGeometry>
+<Point X="608" Y="288"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="S8">
+<PointGeometry>
+<Point X="96" Y="288"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</SimpleNode>
+</NodeList>
+<EdgeList>
+<Edge Source="S1" Target="S2">
+<LabelBlock>
+<SimpleIdentifier Name="H_12"/>
+</LabelBlock>
+<GuardActionBlock>
+<Guards>
+<BinaryExpression Operator="&amp;" Text="p_gol !=2 &amp; p_prisma !=2 &amp; p_gol !=3 &amp; p_prisma !=3">
+<BinaryExpression Operator="&amp;">
+<BinaryExpression Operator="&amp;">
+<BinaryExpression Operator="!=">
+<SimpleIdentifier Name="p_gol"/>
+<IntConstant Value="2"/>
+</BinaryExpression>
+<BinaryExpression Operator="!=">
+<SimpleIdentifier Name="p_prisma"/>
+<IntConstant Value="2"/>
+</BinaryExpression>
+</BinaryExpression>
+<BinaryExpression Operator="!=">
+<SimpleIdentifier Name="p_gol"/>
+<IntConstant Value="3"/>
+</BinaryExpression>
+</BinaryExpression>
+<BinaryExpression Operator="!=">
+<SimpleIdentifier Name="p_prisma"/>
+<IntConstant Value="3"/>
+</BinaryExpression>
+</BinaryExpression>
+</Guards>
+<Actions>
+<BinaryExpression Operator="=">
+<SimpleIdentifier Name="p_Hb20"/>
+<IntConstant Value="2"/>
+</BinaryExpression>
+</Actions>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="20"/>
+</LabelGeometry>
+</GuardActionBlock>
+</Edge>
+<Edge Source="S2" Target="S3">
+<LabelBlock>
+<SimpleIdentifier Name="H_23"/>
+</LabelBlock>
+<GuardActionBlock>
+<Guards>
+<BinaryExpression Operator="&amp;" Text="p_gol !=3 &amp; p_prisma !=3">
+<BinaryExpression Operator="!=">
+<SimpleIdentifier Name="p_gol"/>
+<IntConstant Value="3"/>
+</BinaryExpression>
+<BinaryExpression Operator="!=">
+<SimpleIdentifier Name="p_prisma"/>
+<IntConstant Value="3"/>
+</BinaryExpression>
+</BinaryExpression>
+</Guards>
+<Actions>
+<BinaryExpression Operator="=">
+<SimpleIdentifier Name="p_Hb20"/>
+<IntConstant Value="3"/>
+</BinaryExpression>
+</Actions>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="20"/>
+</LabelGeometry>
+</GuardActionBlock>
+</Edge>
+<Edge Source="S3" Target="S4">
+<LabelBlock>
+<SimpleIdentifier Name="H_34"/>
+</LabelBlock>
+<GuardActionBlock>
+<Guards>
+<BinaryExpression Operator="&amp;" Text="p_gol !=4 &amp; p_prisma !=4">
+<BinaryExpression Operator="!=">
+<SimpleIdentifier Name="p_gol"/>
+<IntConstant Value="4"/>
+</BinaryExpression>
+<BinaryExpression Operator="!=">
+<SimpleIdentifier Name="p_prisma"/>
+<IntConstant Value="4"/>
+</BinaryExpression>
+</BinaryExpression>
+</Guards>
+<Actions>
+<BinaryExpression Operator="=">
+<SimpleIdentifier Name="p_Hb20"/>
+<IntConstant Value="4"/>
+</BinaryExpression>
+</Actions>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="20"/>
+</LabelGeometry>
+</GuardActionBlock>
+</Edge>
+<Edge Source="S4" Target="S5">
+<LabelBlock>
+<SimpleIdentifier Name="H_45"/>
+</LabelBlock>
+<GuardActionBlock>
+<Guards>
+<BinaryExpression Operator="&amp;" Text="p_gol !=5 &amp; p_prisma !=5">
+<BinaryExpression Operator="!=">
+<SimpleIdentifier Name="p_gol"/>
+<IntConstant Value="5"/>
+</BinaryExpression>
+<BinaryExpression Operator="!=">
+<SimpleIdentifier Name="p_prisma"/>
+<IntConstant Value="5"/>
+</BinaryExpression>
+</BinaryExpression>
+</Guards>
+<Actions>
+<BinaryExpression Operator="=">
+<SimpleIdentifier Name="p_Hb20"/>
+<IntConstant Value="5"/>
+</BinaryExpression>
+</Actions>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="20"/>
+</LabelGeometry>
+</GuardActionBlock>
+</Edge>
+<Edge Source="S5" Target="S6">
+<LabelBlock>
+<SimpleIdentifier Name="H_56"/>
+</LabelBlock>
+<GuardActionBlock>
+<Guards>
+<BinaryExpression Operator="&amp;" Text="p_gol !=6 &amp; p_prisma !=6">
+<BinaryExpression Operator="!=">
+<SimpleIdentifier Name="p_gol"/>
+<IntConstant Value="6"/>
+</BinaryExpression>
+<BinaryExpression Operator="!=">
+<SimpleIdentifier Name="p_prisma"/>
+<IntConstant Value="6"/>
+</BinaryExpression>
+</BinaryExpression>
+</Guards>
+<Actions>
+<BinaryExpression Operator="=">
+<SimpleIdentifier Name="p_Hb20"/>
+<IntConstant Value="6"/>
+</BinaryExpression>
+</Actions>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="20"/>
+</LabelGeometry>
+</GuardActionBlock>
+</Edge>
+<Edge Source="S6" Target="S7">
+<LabelBlock>
+<SimpleIdentifier Name="H_67"/>
+</LabelBlock>
+<GuardActionBlock>
+<Guards>
+<BinaryExpression Operator="&amp;" Text="p_gol !=7 &amp; p_prisma !=7">
+<BinaryExpression Operator="!=">
+<SimpleIdentifier Name="p_gol"/>
+<IntConstant Value="7"/>
+</BinaryExpression>
+<BinaryExpression Operator="!=">
+<SimpleIdentifier Name="p_prisma"/>
+<IntConstant Value="7"/>
+</BinaryExpression>
+</BinaryExpression>
+</Guards>
+<Actions>
+<BinaryExpression Operator="=">
+<SimpleIdentifier Name="p_Hb20"/>
+<IntConstant Value="7"/>
+</BinaryExpression>
+</Actions>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="20"/>
+</LabelGeometry>
+</GuardActionBlock>
+</Edge>
+<Edge Source="S7" Target="S8">
+<LabelBlock>
+<SimpleIdentifier Name="H_78"/>
+</LabelBlock>
+<GuardActionBlock>
+<Guards>
+<BinaryExpression Operator="&amp;" Text="p_gol !=8 &amp; p_prisma !=8">
+<BinaryExpression Operator="!=">
+<SimpleIdentifier Name="p_gol"/>
+<IntConstant Value="8"/>
+</BinaryExpression>
+<BinaryExpression Operator="!=">
+<SimpleIdentifier Name="p_prisma"/>
+<IntConstant Value="8"/>
+</BinaryExpression>
+</BinaryExpression>
+</Guards>
+<Actions>
+<BinaryExpression Operator="=">
+<SimpleIdentifier Name="p_Hb20"/>
+<IntConstant Value="8"/>
+</BinaryExpression>
+</Actions>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="20"/>
+</LabelGeometry>
+</GuardActionBlock>
+</Edge>
+<Edge Source="S8" Target="S1">
+<LabelBlock>
+<SimpleIdentifier Name="H_81"/>
+</LabelBlock>
+<GuardActionBlock>
+<Guards>
+<BinaryExpression Operator="&amp;" Text="p_gol !=1 &amp; p_prisma !=1">
+<BinaryExpression Operator="!=">
+<SimpleIdentifier Name="p_gol"/>
+<IntConstant Value="1"/>
+</BinaryExpression>
+<BinaryExpression Operator="!=">
+<SimpleIdentifier Name="p_prisma"/>
+<IntConstant Value="1"/>
+</BinaryExpression>
+</BinaryExpression>
+</Guards>
+<Actions>
+<BinaryExpression Operator="=">
+<SimpleIdentifier Name="p_Hb20"/>
+<IntConstant Value="1"/>
+</BinaryExpression>
+</Actions>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="20"/>
+</LabelGeometry>
+</GuardActionBlock>
+</Edge>
+</EdgeList>
+</Graph>
+</SimpleComponent>
+</ComponentList>
+</Module>

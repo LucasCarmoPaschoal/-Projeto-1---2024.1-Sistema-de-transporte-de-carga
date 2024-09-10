@@ -1,0 +1,9 @@
+Expecificações:
+Sistema de transporte de carga
+Um sistema de transporte de carga consiste em uma via circular com 8 secções e 3 veículos. Entre cada uma das secções existe um semáforo que controla a entrada de um veículo na secção. Exceto entre as secções 2 e 3.
+
+Por questões de segurança, apenas um veículo pode transitar em uma secção de cada vez.
+
+Inicialmente os veículos se encontram nas secções 1 (veículo 1), 4 (veículo 2) e 7 (veículo 3).
+
+
